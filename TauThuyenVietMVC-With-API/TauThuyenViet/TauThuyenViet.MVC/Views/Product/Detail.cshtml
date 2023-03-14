@@ -1,0 +1,45 @@
+﻿@model Product
+
+<main>
+    <section id="product-detail">
+        <aside class="avatar">
+            <img class="img-fluid" src="@Model.Avatar" />
+        </aside>
+        <aside class="info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h1>
+                            @Model.Title
+                        </h1>
+                        
+                        <div>
+                            @Html.Raw(Model.Content)
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="product-imagelist-swiper">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    @foreach (var item in Model.ImageList.Split('\n', StringSplitOptions.RemoveEmptyEntries))
+                                    {
+                                        <div class="swiper-slide">
+                                            <a href="product-detail.html">
+                                                <img class="img-fluid" src="@item" />
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <vc:vc-product-related category-id="@Model.ProductCategoryID.Value" id="@Model.ProductID" />
+    </section>
+</main>

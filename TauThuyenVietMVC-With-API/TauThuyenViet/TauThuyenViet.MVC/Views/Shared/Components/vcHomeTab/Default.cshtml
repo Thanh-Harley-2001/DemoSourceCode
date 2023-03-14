@@ -1,0 +1,51 @@
+﻿
+
+<section id="product-tab-home">
+    <ul class="nav nav-tabs nav-fill nav-justified">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tab-sea-doo">
+                <img class="img-fluid" src="@myconfig.GetConfigByKey("HomeTabIntroOneAvatar")" />
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab-can-am">
+                <img class="img-fluid" src="@myconfig.GetConfigByKey("HomeTabIntroTwoAvatar")" />
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab-brp">
+                <img class="img-fluid" src="@myconfig.GetConfigByKey("HomeTabIntroThreeAvatar")" />
+            </a>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab-sea-doo">
+                <h3>
+                    @myconfig.GetConfigByKey("HomeTabIntroOneHeading")
+                </h3>
+                @Html.Raw(myconfig.GetConfigByKey("HomeTabIntroOneContent"))
+            </div>
+            <div class="tab-pane fade" id="tab-can-am">
+                <h3>
+                    @myconfig.GetConfigByKey("HomeTabIntroTwoHeading")
+                </h3>
+                @Html.Raw(myconfig.GetConfigByKey("HomeTabIntroTwoContent"))
+            </div>
+            <div class="tab-pane fade" id="tab-brp">
+                <h3>
+                    @myconfig.GetConfigByKey("HomeTabIntroThreeHeading")
+                </h3>
+                @Html.Raw(myconfig.GetConfigByKey("HomeTabIntroThreeContent"))
+            </div>
+        </div>
+        <a class="btn btn-warning d-block expand" href="#">
+            Xem thêm
+            <i class="fa fa-arrows-v"></i>
+        </a>
+        <a class="btn btn-warning d-none collap" href="#">
+            Thu gọn
+            <i class="fa fa-level-up"></i>
+        </a>
+    </div>
+</section>

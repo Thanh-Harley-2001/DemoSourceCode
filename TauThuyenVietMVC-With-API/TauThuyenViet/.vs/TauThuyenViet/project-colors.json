@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2908271e-19bf-4623-b3ce-d7ad69db7c40": {
+      "ProjectGuid": "2908271e-19bf-4623-b3ce-d7ad69db7c40",
+      "DisplayName": "TauThuyenViet.MVC",
+      "ColorIndex": 0
+    },
+    "efd1ac1f-8a09-4813-a93a-3f724519143b": {
+      "ProjectGuid": "efd1ac1f-8a09-4813-a93a-3f724519143b",
+      "DisplayName": "TauThuyenViet.API",
+      "ColorIndex": 1
+    },
+    "24061b72-c64b-42ea-9c57-80fb86d227f4": {
+      "ProjectGuid": "24061b72-c64b-42ea-9c57-80fb86d227f4",
+      "DisplayName": "TauThuyenViet.Models",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

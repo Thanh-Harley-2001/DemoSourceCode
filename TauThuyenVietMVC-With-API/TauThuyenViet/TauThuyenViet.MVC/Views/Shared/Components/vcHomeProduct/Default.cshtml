@@ -1,0 +1,67 @@
+﻿@model List<ProductMainCategory>
+
+<section id="product-home">
+    @foreach (var item in Model)
+    {
+        <div class="wrapper">
+            <a class="avatar" asp-route="ProductList" 
+                              asp-route-mid="@item.ProductMainCategoryID" 
+                              asp-route-cid="0" 
+                              asp-route-title="@item.Title.ToUrlFormat()">
+                <img class="img-fluid" src="@item.Avatar" />
+                <img class="overlay" src="@item.Thumb" />
+            </a>
+
+            <div class="full">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        @foreach (var cat in item.ProductCategories)
+                        {
+                            @foreach (var product in cat.Products)
+                            {
+                                <div class="swiper-slide">
+                                    <a asp-route-id="@product.ProductID"
+                                       asp-route-title="@product.Title.ToUrlFormat()"
+                                       asp-route="ProductDetail">
+                                        <img src="@product.ImageList.GetFirstImage()" />
+                                        <span>@product.Title</span>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="thumb">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        @foreach (var cat in item.ProductCategories)
+                        {
+                            @foreach (var product in cat.Products)
+                            {
+                                <div class="swiper-slide">
+                                    <a asp-route-id="@product.ProductID"
+                                       asp-route-title="@product.Title.ToUrlFormat()"
+                                       asp-route="ProductDetail">
+                                        <img src="@product.ImageList.GetFirstImage()" />
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
